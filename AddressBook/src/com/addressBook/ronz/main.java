@@ -18,13 +18,14 @@ public class main {
             String choice = input.next();
             if (choice.equals("0")) {                                               //退出系统
 
-                System.out.println("欢迎再次使用通信录，再见！");
+                System.out.println("欢迎再次使用通讯录，再见！");
                 break;
             } else if (choice.equals("1")) {                                        //新建一个组
 
                 groupManage.addGroup();
             } else if (choice.equals("2")) {                                        //删除一个组
 
+                groupManage.printGroup();
                 System.out.println("请输入要删除的分组的昵称：");
                 String delName = input.next();
                 if (groupManage.delGroup(delName))
@@ -43,7 +44,7 @@ public class main {
                     String flag = input.next();
                     if (flag.equals("Y")){
 
-                        groupManage.addGroup();
+                        groupManage.addGroup(groupName);
                         group = (Group) groupManage.getGroup(groupName);
                     } else
                         continue;

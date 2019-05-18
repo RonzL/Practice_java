@@ -16,6 +16,10 @@ public class GroupManage {
     public void addGroup(){
         System.out.println("请输入您要添加的组的名称");
         String groupName = input.next();
+        addGroup(groupName);
+    }
+
+    public void addGroup(String groupName){
         Group group = new Group(groupName);
         hashMap.put(groupName,group);
         System.out.println("分组"+ groupName + "创建成功！");
